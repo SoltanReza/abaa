@@ -1,19 +1,21 @@
 // components/ServiceSection.js
 
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
-    title: "OPTIMIZE YOUR PROCESSES!",
+    title: "Positionnement professionnel",
     description:
-      "You will get a free personal manager who will help to build a strategy, optimize the budget and deadline, organize the development process and launch the project.",
-    image: "/logo.jpg", // Replace with your own image path
+      "avec une focalisation sur l'éthique, la déontologie, et la qualité de vie au travail.",
+    image: "/work.svg", // Replace with your own image path
   },
   {
-    title: "ACCELERATE YOUR REVENUE!",
+    title:
+      "Accompagnement aux actes et aux gestes essentiels de la vie quotidienne",
     description:
-      "200+ years of cumulative team experience. No matter the industry, business goals, or location to turn your requirements into the profitable solution.",
-    image: "/logo.jpg", // Replace with your own image path
+      "couvrant l'alimentation, l'habillement, l'hygiène, et le bien-être.",
+    image: "/deliveries.svg", // Replace with your own image path
   },
 ];
 
@@ -52,6 +54,11 @@ const ServiceSection = () => {
                       {service.title}
                     </h3>
                     <p>{service.description}</p>
+                    <div className="w-1/2 ">
+                      <Link href="/service" className="btn">
+                        Learn more
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -59,12 +66,12 @@ const ServiceSection = () => {
           ))}
         </div>
         <div className="text-center mt-8">
-          <a
-            href="#contact"
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+          <Link
+            href="/contact"
+            className="transition ease-in-out hover:text-brand-purple"
           >
-            Get In Touch
-          </a>
+            Nous contacter
+          </Link>
         </div>
       </div>
     </div>

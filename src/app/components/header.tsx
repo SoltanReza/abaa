@@ -1,4 +1,3 @@
-// components/Header.js
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,26 +22,26 @@ const Header = () => {
             <ul className="flex items-center space-x-4">
               <li>
                 <Link
-                  className="text-gray-600 hover:text-gray-900"
-                  href="/docs"
+                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
+                  href="/services"
                 >
-                  Docs
+                  Services
                 </Link>
               </li>
               <li>
                 <Link
-                  className="text-gray-600 hover:text-gray-900"
-                  href="/components"
+                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
+                  href="/contact"
                 >
-                  Components
+                  Contact us
                 </Link>
               </li>
               <li>
                 <Link
-                  className="text-gray-600 hover:text-gray-900"
-                  href="/blog"
+                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
+                  href="/about"
                 >
-                  Blog
+                  About
                 </Link>
               </li>
               {/* Add more nav items here */}

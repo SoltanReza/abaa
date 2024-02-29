@@ -10,14 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         "brand-green": "#409e5f",
+        "brand-purple": "#5f409e",
+        "brand-brown": "#9e5f40",
       },
       fontFamily: {
         sans: ["Open Sans", "sans-serif"],
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
