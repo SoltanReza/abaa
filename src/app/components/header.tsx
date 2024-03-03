@@ -44,6 +44,14 @@ const Header = () => {
                   About
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
+                  href="/blog"
+                >
+                  Blog
+                </Link>
+              </li>
               {/* Add more nav items here */}
             </ul>
           </nav>

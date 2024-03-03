@@ -31,7 +31,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="input mrt -4"
+                  className="input mr-4"
                 />
                 <button type="button" className="btn-xs">
                   Subscribe
@@ -39,8 +39,42 @@ const Footer = () => {
               </form>
             </div>
           </div>
-          <div className="flex flex-col w-1/2 items-center justify-between">
-            <div className="flex w-full items-center justify-between font-bold">
+          <div className="flex w-1/2 items-center justify-between">
+            <div className="flex flex-col w-full items-center justify-between font-bold">
+              <div className="w-full">
+                <a href="/about" className=" hover:text-black">
+                  About Us
+                </a>
+              </div>
+              <div className="w-full ">
+                <a href="/contact" className=" hover:text-black">
+                  Contact
+                </a>
+              </div>
+              <div className="w-full ">
+                <a href="/privacy" className=" w-full  hover:text-black">
+                  Privacy Policy
+                </a>
+              </div>
+            </div>
+            <div className="flex flex-col w-full items-center justify-between font-bold">
+              <div className="w-full">
+                <a href="/about" className=" hover:text-black">
+                  About Us
+                </a>
+              </div>
+              <div className="w-full ">
+                <a href="/contact" className=" hover:text-black">
+                  Contact
+                </a>
+              </div>
+              <div className="w-full ">
+                <a href="/privacy" className=" w-full  hover:text-black">
+                  Privacy Policy
+                </a>
+              </div>
+            </div>
+            <div className="flex flex-col w-full items-center justify-between font-bold">
               <div className="w-full">
                 <a href="/about" className=" hover:text-black">
                   About Us

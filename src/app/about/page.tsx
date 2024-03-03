@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Import Swiper styles
 import "swiper/css/pagination"; // Import styles for pagination
 import { Autoplay, Pagination } from "swiper/modules";
-import TeamMembers from "../components/team-members/page";
+import TeamMembers from "../components/team-members/teamMembers";
 const AboutUs: React.FC = () => {
   const images = ["/about-us-1.jpeg", "/about-us-2.jpeg", "/about-us-3.jpeg"];
   return (

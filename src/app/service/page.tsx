@@ -3,7 +3,7 @@ import ContentSection from "../components/content/contentSection";
 import HeroSection from "../components/hero-section/heroSection";
 import ServiceSection from "../components/service-section/service-section";
 import CustomTable from "../components/table/table";
-import TeamMembers from "../components/team-members/page";
+import TeamMembers from "../components/team-members/teamMembers";
 
 const data = [
   { id: 1, name: "John Doe", email: "john@example.com" },
