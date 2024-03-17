@@ -1,2 +1,7 @@
 "use client";
-export const isAuthenticated = localStorage.getItem("token") ? true : false;
+export const isAuthenticated =
+  typeof window !== "undefined"
+    ? localStorage.getItem("token")
+      ? true
+      : false
+    : false;
