@@ -2,25 +2,25 @@
 import { useEffect, useState } from "react";
 import BlogCard from "../components/blog-card/blogCard";
 import HeroSection from "../components/hero-section/heroSection";
+import { apiFetch } from "@/utils/apiFetch";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/posts")
+    apiFetch("/posts?poplulate=*", { method: "GET" })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setPosts(data.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   }, []);
 
   return (
     <main>
       <HeroSection
-        title="Blog posts"
-        description="Description for this page"
+        title="Évenement et nouvelles"
+        description=""
         image={{
           title: "Blog",
           src: "/blog-post.svg",

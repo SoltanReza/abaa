@@ -47,26 +47,38 @@ p {
   font-variation-settings: "wdth" 100;
 }
 .btn {
-  @apply flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-md transition text-indigo-600 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10;
+  @apply flex items-center justify-center px-4 py-2 text-sm font-bold rounded-md transition text-indigo-600 bg-indigo-100 hover:bg-indigo-200 border border-transparent;
+  @apply sm:px-6 sm:py-2.5 sm:text-base;
+  @apply md:px-8 md:py-3 md:text-lg;
+  @apply lg:px-10 lg:py-4;
 }
 
 .btn-primary {
-  @apply flex items-center justify-center px-8 py-3 border bg-brand-purple border-brand-purple text-base transition font-bold rounded-md text-white  hover:text-brand-green hover:bg-white hover:border-transparent md:py-4 md:text-lg md:px-10;
+  @apply flex items-center justify-center px-4 py-2 text-sm font-bold rounded-md transition bg-brand-purple   border-brand-purple text-white hover:bg-opacity-10 hover:text-brand-green;
+  @apply sm:px-6 sm:py-2.5 sm:text-base;
+  @apply md:px-8 md:py-3 md:text-lg;
+  @apply lg:px-10 lg:py-4;
 }
 
 .btn-sm {
-  @apply flex items-center justify-center px-4 py-2 border border-transparent text-base font-bold rounded-md transition text-indigo-600 bg-indigo-100 hover:bg-indigo-200 md:py-2 md:px-5;
+  @apply flex items-center justify-center px-3 py-1.5 text-xs font-bold rounded-md transition text-indigo-600 bg-indigo-100 hover:bg-indigo-200 border border-transparent;
+  @apply sm:px-4 sm:py-2 sm:text-sm;
+  @apply md:px-5 md:py-2.5;
 }
 
 .btn-xs {
-  @apply flex items-center justify-center px-2 py-1 border border-transparent text-sm font-bold rounded-md transition text-indigo-600 bg-indigo-100 hover:bg-indigo-200 md:py-2 md:px-2;
+  @apply flex items-center justify-center px-2 py-1 text-xs font-bold rounded-md transition text-indigo-600 bg-indigo-100 hover:bg-indigo-200 border border-transparent;
+  @apply sm:px-3 sm:py-1.5;
+  @apply md:px-4 md:py-2 md:text-sm;
 }
 
 .input {
-  @apply border border-gray-300 rounded-md px-4 py-2;
+  @apply border border-gray-300 rounded-md text-sm px-3 py-1.5;
+  @apply md:px-4 md:py-2 md:text-base;
 }
-/* styles.css or globals.css */
+
 .hexagon-logo {
-  @apply inline-block bg-white p-2; /* Adjust padding and size as needed */
+  @apply inline-block bg-white p-2; /* This might already be responsive, but adjust as needed for your design */
 }
+
 /* Add any additional specific styles you need here */

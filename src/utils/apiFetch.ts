@@ -2,10 +2,10 @@ export type strapiResponseType = {
   data: any;
   meta: any;
 };
-export const baseUrl = "http://localhost:1337";
+export const baseUrl = "http://146.59.225.149:1337";
 
 export function apiFetch(url: string, options: any) {
-  const apiUrl = "http://localhost:1337/api";
+  const apiUrl = "http://146.59.225.149:1337/api";
 
   const token = "Bearer" + localStorage.getItem("token");
   const headers = {

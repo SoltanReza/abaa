@@ -1,63 +1,128 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  useMediaQuery,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Menu,
+  MenuItem,
+  Typography,
+  Button,
+  Box,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { isAuthenticated } from "@/utils/authProvider";
 
 const Header = () => {
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("md"));
+
+  const handleOpenNavMenu = (event: any) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const navLinks = [
+    { title: "Nos services", path: "/services" },
+    { title: "Nous contacter", path: "/contact" },
+    { title: "À propos", path: "/about" },
+    { title: "Blog", path: "/blog" },
+    // Conditionally show sign in or sign out based on authentication state
+    isAuthenticated
+      ? { title: "Se deconnecter", path: "/signout" }
+      : { title: "Se connecter", path: "/auth" },
+  ];
+
   return (
-    <header className="bg-white border-b shadow-sm">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center py-3">
-          {/* Logo on the left */}
-          <div>
-            <Link className="flex items-center" href="/">
-              {/* Replace with your own logo */}
-              <Image src="/logo.jpg" alt="Logo" width={72} height={48} />
-              <span className="ml-2 text-xl font-bold text-brand-green">
-                Aba'a association
+    <AppBar position="static" color="default" elevation={0}>
+      <Toolbar className="bg-white">
+        <div className="max-w-6xl mx-auto w-full">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            width="100%"
+          >
+            <Link href="/">
+              <span className="flex items-center">
+                <Image src="/logo.png" alt="Logo" width={110} height={80} />
+                <Typography
+                  variant="h6"
+                  className="ml-2 font-bold text-brand-green"
+                >
+                  Association ABA'A
+                </Typography>
               </span>
             </Link>
-          </div>
+            {isMobile ? (
+              <>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  {navLinks.map((link) => (
+                    <MenuItem key={link.title} onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">
+                        <Link href={link.path}>{link.title}</Link>
+                      </Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </>
+            ) : (
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "none", md: "flex" },
+                  justifyContent: "flex-end", 
+                }}
 
-          {/* Right side navigation */}
-          <nav>
-            <ul className="flex items-center space-x-4">
-              <li>
-                <Link
-                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
-                  href="/services"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
-                  href="/contact"
-                >
-                  Contact us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
-                  href="/about"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition ease-in-out hover:text-brand-green"
-                  href="/blog"
-                >
-                  Blog
-                </Link>
-              </li>
-              {/* Add more nav items here */}
-            </ul>
-          </nav>
+              >
+                {navLinks.map((link) => (
+                  <Button
+                    key={link.title}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "text.primary", display: "block" }}
+                  >
+                    <Link href={link.path}>{link.title}</Link>
+                  </Button>
+                ))}
+              </Box>
+            )}
+          </Box>
         </div>
-      </div>
-    </header>
+      </Toolbar>
+    </AppBar>
   );
 };
 

@@ -9,20 +9,20 @@ export default function Services() {
         title="Nos Services"
         description="Un Soutien Sur-Mesure Pour Chaque Besoin"
         image={{
-          src: "/logo.jpg",
+          src: "/images/image.jpg",
           title: "Services",
-          width: 240,
-          height: 240,
+          width: 150,
+          height: 150,
         }}
       />
       <ContentSection>
-        <h3> Les Services et formations de Aba'a</h3>
+        <h3> Les Services et formations de ABA'A</h3>
         <p>
-          Bienvenue sur notre page des services de [Nom de l'Association], où
-          notre mission est de fournir un soutien adapté et efficace à ceux qui
-          en ont le plus besoin. Notre association s'engage à offrir une gamme
+          Bienvenue sur notre page des services de ABA'A, où notre mission est
+          de fournir un soutien adapté et efficace à ceux qui en ont le plus
+          besoin. Notre association vise à offrir progressivement une gamme
           complète de services conçus pour répondre aux divers défis rencontrés
-          par les individus et les familles en difficulté. Découvrez comment
+          par les personnes et les familles en difficulté. Découvrez comment
           nous pouvons vous aider à surmonter les obstacles et à trouver des
           solutions durables pour une vie meilleure.
         </p>

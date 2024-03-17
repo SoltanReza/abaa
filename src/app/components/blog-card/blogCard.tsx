@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+//TODO: Add a placeholder image
 
 export default function BlogCard({ content }: any) {
   const post = content.attributes;

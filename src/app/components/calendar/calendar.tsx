@@ -16,7 +16,6 @@ export default function Calendar({ events }: any) {
       });
       const data = await response.json();
       data.data = data.data.slice(0, 3);
-      console.log(data);
 
       setFetchedEvents(data.data);
     } catch (error) {
@@ -24,11 +23,9 @@ export default function Calendar({ events }: any) {
     }
   };
 
-  if (!events || events.length === 0) return null;
-
   return (
     <div className="flex flex-col text-center ">
-      <h3>Les evenements de Abaa</h3>
+      <h3>Les événements de ABA'A</h3>
       <div className="flex justify-between mx-10 my-5 text-left ">
         {fetchedEvents &&
           fetchedEvents.map((event: any, index: any) => (
