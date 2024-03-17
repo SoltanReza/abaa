@@ -2,7 +2,6 @@
 import HeroSection from "../../components/hero-section/heroSection";
 import ServiceSection from "../../components/service-section/service-section";
 import TeamMembers from "../../components/team-members/teamMembers";
-import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { apiFetch, baseUrl } from "@/utils/apiFetch";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
@@ -13,14 +12,13 @@ const data = [
   { id: 2, name: "Jane Doe", email: "jane@example.com" },
   // Add more data as needed
 ];
-export default function Service() {
+export default function Service({ params }: { params: { id: string } }) {
   const [content, setContent] = useState<any>(null);
-  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiFetch(`/services/${id}?populate=*`, {
+        const response = await apiFetch(`/services/${params.id}?populate=*`, {
           method: "GET",
         });
         const data = await response.json();

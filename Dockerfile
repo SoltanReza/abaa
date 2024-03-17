@@ -19,17 +19,19 @@ COPY . .
 # Build your Next.js application
 RUN npm run build
 
+
 # Step 2: Serve the application using the Next.js production server
 FROM node:18-alpine AS runner
 
 WORKDIR /app
 
 # Copy the build artifacts from the builder stage
+
 COPY --from=builder next.config.js ./
 COPY --from=builder public ./public
 COPY --from=builder .next ./.next
 COPY --from=builder node_modules ./node_modules
-COPY --from=builder package.json ./package.json
+COPY --from=builder ./package.json ./package.json
 
 # Set the port the app runs on
 ENV PORT 3000

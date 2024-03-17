@@ -24,23 +24,21 @@ export default function Calendar({ events }: any) {
   };
 
   return (
-    <div className="flex flex-col text-center ">
-      <h3>Les événements de ABA'A</h3>
-      <div className="flex justify-between mx-10 my-5 text-left ">
+    <div className="flex flex-col text-center px-4 sm:px-6 lg:px-8">
+      <h3 className="text-xl font-semibold my-5">Les événements de ABA'A</h3>
+      <div className="flex flex-wrap justify-between -mx-2">
         {fetchedEvents &&
-          fetchedEvents.map((event: any, index: any) => (
+          fetchedEvents.map((event, index) => (
             <div
               key={index}
-              className={`flex-1 mx-8 p-4 rounded-lg shadow-lg ${
+              className={`w-full sm:w-1/2 lg:w-1/3 px-2 mb-4 transform transition-all duration-500 ${
                 index === 0
-                  ? "bg-brand-green"
-                  : "border-dashed border-2 border-brand-green"
-              } transform ${
-                index === 0 ? "scale-105" : "scale-100"
-              } transition-all duration-500`}
+                  ? "scale-105 bg-brand-green"
+                  : "scale-100 border-dashed border-2 border-brand-green"
+              } rounded-lg shadow-lg p-4`}
             >
               <h2
-                className={`flex justify-center items-center text-lg font-bold ${
+                className={`flex justify-center items-center text-lg font-bold mb-2 ${
                   index === 0 ? "text-white" : "text-brand-green"
                 }`}
               >
@@ -49,49 +47,35 @@ export default function Calendar({ events }: any) {
                   viewBox="0 0 500 500"
                   width="20"
                   height="20"
-                  style={{ marginRight: "5px", verticalAlign: "middle" }}
+                  className="mr-2 inline-block"
                 >
                   <rect
                     x="50"
                     y="60"
                     width="400"
                     height="380"
-                    style={{ fill: index === 0 ? "#5f409e" : "#409e5f" }}
+                    fill={index === 0 ? "#5f409e" : "#409e5f"}
                   />
                   <line
                     x1="50"
                     y1="120"
                     x2="450"
                     y2="120"
-                    style={{
-                      stroke: index === 0 ? "#409e5f" : "#5f409e",
-                      strokeWidth: 20,
-                    }}
+                    stroke={index === 0 ? "#409e5f" : "#5f409e"}
+                    strokeWidth="20"
                   />
-                  <rect
-                    x="85"
-                    y="20"
-                    width="50"
-                    height="50"
-                    style={{ fill: "#FFFFFF" }}
-                  />
-                  <rect
-                    x="365"
-                    y="20"
-                    width="50"
-                    height="50"
-                    style={{ fill: "#FFFFFF" }}
-                  />
+                  <rect x="85" y="20" width="50" height="50" fill="#FFFFFF" />
+                  <rect x="365" y="20" width="50" height="50" fill="#FFFFFF" />
                 </svg>
                 {event.attributes.date}
               </h2>
-              <h3 className="text-md font-semibold text-black mt-2">
+              <h3 className="text-md font-semibold text-black">
                 {event.attributes.title}
               </h3>
               <p
-                className={`text-lg ${
+                className={`text-lg font-bold mt-1 ${
                   index === 0 ? "text-white" : "text-brand-green"
-                } font-bold  mt-1`}
+                }`}
               >
                 {event.attributes.description}
               </p>
