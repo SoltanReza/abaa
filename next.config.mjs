@@ -13,6 +13,11 @@ const nextConfig = {
         port: "1337",
       },
       {
+        protocol: "https",
+        hostname: "admin.associationabaa.org",
+        // port: "80",
+      },
+      {
         // protocol: "http",
         hostname: "146.59.225.149",
         port: "1337",

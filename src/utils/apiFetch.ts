@@ -2,10 +2,10 @@ export type strapiResponseType = {
   data: any;
   meta: any;
 };
-export const baseUrl = "http://146.59.225.149:1337";
+export const baseUrl = "https://admin.associationabaa.org";
 
 export function apiFetch(url: string, options: any) {
-  const apiUrl = "http://146.59.225.149:1337/api";
+  const apiUrl = "https://admin.associationabaa.org/api";
 
   const token = "Bearer" + localStorage.getItem("token");
   const headers = {
